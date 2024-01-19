@@ -1,0 +1,157 @@
+/* reset stylesheet */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* end stylesheet reset */
+
+:root {
+    --gray-bg: #e5e7eb;
+}
+
+/* Container */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+body {
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'DM Serif Display', serif;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 30vw 70vw;
+}
+
+/* end container */
+
+/* sidebar */
+
+.side-bar {
+    background-color: var(--gray-bg);
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.side-bar > h1 {
+    padding-top: 3rem;
+    font-size: 4rem;
+}
+
+.side-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.side-header > img {
+    width: 4rem;
+}
+
+.side-header > h2 {
+    font-size: 2rem;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.project-list > button {
+    width: 60%;
+}
+
+/* Modal */
+/* 
+.modal-project {
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 400px;
+    height: 100px;
+} */
+
+/* Project Display */
+
+.project-items {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 175px;
+}
+
+.project-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--gray-bg);
+}
+
+.project-details > h1 {
+    font-size: 6rem;
+}
+
+.project-details > h3 {
+    font-size: 3rem;
+}
+
+.project-tasks {
+    padding-top: 50px;
+    padding-left: 1rem;
+}
+
+
+.project-tasks > ul > li {
+    font-size: 2rem;
+}
