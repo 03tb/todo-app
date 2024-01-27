@@ -1,4 +1,4 @@
-import { switchingTaskList, changeProjectName } from "./tasks";
+import { switchingTaskList, changeProjectName, displayDate } from "./tasks";
 
 export { Project, closeModal, projectsArray, currentProject }
 
@@ -9,6 +9,7 @@ const addProjectBtn = document.querySelector('.add-project');
 const closeBtn = document.querySelector('.close-btn');
 const confirmBtn = document.querySelector('.confirm-btn');
 const modalInput = document.querySelector('#project-name-input')
+const projectDD = document.querySelector('#project-dd')
 
 let projectsArray = [];
 let modalChosenProjectName;
@@ -18,21 +19,26 @@ let currentProject;
 // end global variables
 
 class Project {
-    constructor(name, tasks = []) {
+    constructor(name, tasks = [], dueDate) {
         this.name = name;
         this.tasks = tasks;
+        this.dueDate = dueDate;
         projectsArray.push(this)
         console.log(projectsArray)
     }
     getName() {
         return this.name;
     }
+    getDueDate(){
+        return this.dueDate;
+    }
 }
 
 (function onBoot() {
-    const defaultProject = new Project('Default Project', ['First Task'])
+    const defaultProject = new Project('Default Project', ['First Task'], '2024-11-26')
     currentProject = defaultProject;
     changeProjectName();
+    displayDate();
     const projectListContainer = document.querySelector('.project-list');
     const projectListItem = document.createElement('li');
     projectListItem.addEventListener('click', () => {
@@ -64,7 +70,7 @@ function addProject() {
       const projectListContainer = document.querySelector('.project-list');
       const projectListItem = document.createElement('li');
   
-      const newProject = new Project(modalChosenProjectName);
+      const newProject = new Project(modalChosenProjectName, [], projectDD.value);
   
       projectListItem.addEventListener('click', () => {
         currentProject = newProject;
